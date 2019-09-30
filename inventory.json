@@ -1,0 +1,615 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "inventory/v1beta1/inventory.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/inventory/v1/asset/{id}": {
+      "get": {
+        "summary": "Gets an asset i.e. application instances (eg SQL / ORACLE dbs).",
+        "operationId": "GetAsset",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.GetAssetResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Inventory"
+        ]
+      }
+    },
+    "/inventory/v1/assethost/{host_id}": {
+      "get": {
+        "summary": "Gets an asset host (devices that host supported application).",
+        "operationId": "GetAssetHost",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.GetAssetHostResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Inventory"
+        ]
+      }
+    },
+    "/inventory/v1/assethosts": {
+      "get": {
+        "summary": "Gets all asset hosts (devices that host supported application).",
+        "operationId": "GetAllAssetHosts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.GetAllAssetHostsResponse"
+            }
+          }
+        },
+        "tags": [
+          "Inventory"
+        ]
+      }
+    },
+    "/inventory/v1/assets": {
+      "get": {
+        "summary": "Gets all assets i.e application instances (eg SQL / ORACLE dbs).",
+        "operationId": "GetAllAssets",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.GetAllAssetsResponse"
+            }
+          }
+        },
+        "tags": [
+          "Inventory"
+        ]
+      }
+    },
+    "/inventory/v1/logicalstorageunits/{serial_number}": {
+      "get": {
+        "summary": "Get all logical storage units for a given storage device.",
+        "operationId": "GetStorageDeviceLogicalUnits",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.GetStorageDeviceLogicalUnitsResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serial_number",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Inventory"
+        ]
+      }
+    },
+    "/inventory/v1/storagedevice": {
+      "post": {
+        "summary": "Add a storeage device.",
+        "operationId": "AddStorageDevice",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.AddStorageDeviceResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.AddStorageDeviceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Inventory"
+        ]
+      }
+    },
+    "/inventory/v1/storagedevice/{serial_number}": {
+      "get": {
+        "summary": "Gets a storage device.",
+        "operationId": "GetStorageDevice",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.GetStorageDeviceResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serial_number",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Inventory"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a storeage device.",
+        "operationId": "DeleteStorageDevice",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.DeleteStorageDeviceResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serial_number",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Inventory"
+        ]
+      },
+      "put": {
+        "summary": "Update a storeage device.",
+        "operationId": "UpdateStorageDevice",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.UpdateStorageDeviceResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serial_number",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.UpdateStorageDeviceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Inventory"
+        ]
+      }
+    },
+    "/inventory/v1/storagedevices": {
+      "get": {
+        "summary": "Gets all storage devices.",
+        "operationId": "GetAllStorageDevices",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/inventory.v1beta1.GetAllStorageDevicesResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "serial_number",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Inventory"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "inventory.v1beta1.AddStorageDeviceRequest": {
+      "type": "object",
+      "properties": {
+        "request": {
+          "$ref": "#/definitions/inventory.v1beta1.StorageDeviceRequest"
+        }
+      },
+      "description": "The input parameter to add a StorageDevices."
+    },
+    "inventory.v1beta1.AddStorageDeviceResponse": {
+      "type": "object",
+      "properties": {
+        "workflow_run_id": {
+          "type": "string"
+        }
+      },
+      "title": "The response from the add storage device call"
+    },
+    "inventory.v1beta1.Asset": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/inventory.v1beta1.AssetStatus"
+        },
+        "associated_capability": {
+          "$ref": "#/definitions/inventory.v1beta1.ServerCapability"
+        },
+        "associated_storage_units": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inventory.v1beta1.LogicalStorageUnit"
+          }
+        }
+      },
+      "description": "Details of asset."
+    },
+    "inventory.v1beta1.AssetHost": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "host_id": {
+          "type": "string"
+        },
+        "os_name": {
+          "type": "string"
+        },
+        "os_version": {
+          "type": "string"
+        },
+        "status_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "$ref": "#/definitions/inventory.v1beta1.DeviceStatus"
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inventory.v1beta1.ServerCapability"
+          }
+        },
+        "connected_storage": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inventory.v1beta1.LogicalStorageUnit"
+          }
+        }
+      },
+      "description": "Details of Asset host."
+    },
+    "inventory.v1beta1.AssetStatus": {
+      "type": "string",
+      "enum": [
+        "ASSET_STATUS_INVALID",
+        "ASSET_STATUS_ASSET_AVAILABLE",
+        "ASSET_STATUS_ASSET_UNAVAILABLE",
+        "ASSET_STATUS_ASSET_ERROR"
+      ],
+      "default": "ASSET_STATUS_INVALID",
+      "title": "An enum to describe application instance (eg db) status"
+    },
+    "inventory.v1beta1.DMOP": {
+      "type": "object",
+      "properties": {
+        "serial_number": {
+          "type": "string",
+          "title": "The serial number of the device with the Cloud Connector on it.\nThis would be the RMC Serial Number in the case of DMoP for example.\nThis is used to uniquely identify the Cloud Connector installation.\nInternally this may be combined with the CustomerID and / or\nthe ProductType to ensure uniquenes"
+        },
+        "product_type": {
+          "$ref": "#/definitions/inventory.v1beta1.ProductType"
+        },
+        "product_version": {
+          "type": "string"
+        }
+      },
+      "description": "A datamanager on premise."
+    },
+    "inventory.v1beta1.DeRegisterDMOPResponse": {
+      "type": "object"
+    },
+    "inventory.v1beta1.DeleteStorageDeviceResponse": {
+      "type": "object",
+      "properties": {
+        "workflow_run_id": {
+          "type": "string"
+        }
+      },
+      "title": "The response from the delete storage device call"
+    },
+    "inventory.v1beta1.DeviceStatus": {
+      "type": "string",
+      "enum": [
+        "DEVICE_STATUS_INVALID",
+        "DEVICE_STATUS_DEVICE_AVAILABLE",
+        "DEVICE_STATUS_DEVICE_UNAVAILABLE",
+        "DEVICE_STATUS_DEVICE_ERROR"
+      ],
+      "default": "DEVICE_STATUS_INVALID",
+      "title": "An enum to describe the status of any given device"
+    },
+    "inventory.v1beta1.GetAllAssetHostsResponse": {
+      "type": "object",
+      "properties": {
+        "asset_hosts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inventory.v1beta1.AssetHost"
+          }
+        }
+      },
+      "description": "Array of all application servers."
+    },
+    "inventory.v1beta1.GetAllAssetsResponse": {
+      "type": "object",
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inventory.v1beta1.Asset"
+          }
+        }
+      },
+      "description": "Array of all application instances."
+    },
+    "inventory.v1beta1.GetAllDMOPsResponse": {
+      "type": "object",
+      "properties": {
+        "dmops": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inventory.v1beta1.DMOP"
+          }
+        }
+      }
+    },
+    "inventory.v1beta1.GetAllStorageDevicesResponse": {
+      "type": "object",
+      "properties": {
+        "storage_devices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inventory.v1beta1.StorageDevice"
+          }
+        }
+      },
+      "description": "Holds all details of all storage devices."
+    },
+    "inventory.v1beta1.GetAssetHostResponse": {
+      "type": "object",
+      "properties": {
+        "asset_host": {
+          "$ref": "#/definitions/inventory.v1beta1.AssetHost"
+        }
+      }
+    },
+    "inventory.v1beta1.GetAssetResponse": {
+      "type": "object",
+      "properties": {
+        "asset": {
+          "$ref": "#/definitions/inventory.v1beta1.Asset"
+        }
+      }
+    },
+    "inventory.v1beta1.GetDMOPBySerialNumberResponse": {
+      "type": "object",
+      "properties": {
+        "dmop": {
+          "$ref": "#/definitions/inventory.v1beta1.DMOP"
+        }
+      }
+    },
+    "inventory.v1beta1.GetStorageDeviceLogicalUnitsResponse": {
+      "type": "object",
+      "properties": {
+        "logical_storage_units": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inventory.v1beta1.LogicalStorageUnit"
+          }
+        }
+      },
+      "description": "Array of volumes/stores etc."
+    },
+    "inventory.v1beta1.GetStorageDeviceResponse": {
+      "type": "object",
+      "properties": {
+        "device": {
+          "$ref": "#/definitions/inventory.v1beta1.StorageDevice"
+        }
+      }
+    },
+    "inventory.v1beta1.LogicalStorageUnit": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "storage_device_serial_number": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/inventory.v1beta1.LogicalStorageUnitStatus"
+        }
+      },
+      "description": "Details of logical storage unit."
+    },
+    "inventory.v1beta1.LogicalStorageUnitStatus": {
+      "type": "string",
+      "enum": [
+        "LOGICAL_STORAGE_UNIT_STATUS_INVALID",
+        "LOGICAL_STORAGE_UNIT_STATUS_AVAILABLE",
+        "LOGICAL_STORAGE_UNIT_STATUS_UNAVAILABLE",
+        "LOGICAL_STORAGE_UNIT_STATUS_ERROR"
+      ],
+      "default": "LOGICAL_STORAGE_UNIT_STATUS_INVALID",
+      "title": "An enum to describe volume/store status"
+    },
+    "inventory.v1beta1.ProductType": {
+      "type": "string",
+      "enum": [
+        "PRODUCT_TYPE_INVALID",
+        "PRODUCT_TYPE_DMOP",
+        "PRODUCT_TYPE_3PAR",
+        "PRODUCT_TYPE_NIMBLE"
+      ],
+      "default": "PRODUCT_TYPE_INVALID",
+      "description": "A Product Type enum. Requires code change to support additional products."
+    },
+    "inventory.v1beta1.RegisterDMOPResponse": {
+      "type": "object"
+    },
+    "inventory.v1beta1.ServerCapability": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/inventory.v1beta1.SoftwareStatus"
+        }
+      },
+      "description": "Supported application software installed on an asset host."
+    },
+    "inventory.v1beta1.SoftwareStatus": {
+      "type": "string",
+      "enum": [
+        "SOFTWARE_STATUS_INVALID",
+        "SOFTWARE_STATUS_APPLICATION_RUNNING",
+        "SOFTWARE_STATUS_APPLICATION_STOPPED",
+        "SOFTWARE_STATUS_APPLICATION_ERROR"
+      ],
+      "default": "SOFTWARE_STATUS_INVALID",
+      "title": "An enum to describe software status"
+    },
+    "inventory.v1beta1.StorageDevice": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "serial_number": {
+          "type": "string"
+        },
+        "status_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "$ref": "#/definitions/inventory.v1beta1.DeviceStatus"
+        }
+      },
+      "description": "Details of a given storage device."
+    },
+    "inventory.v1beta1.StorageDeviceRequest": {
+      "type": "object",
+      "properties": {
+        "product": {
+          "$ref": "#/definitions/inventory.v1beta1.ProductType"
+        },
+        "address": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "description": "Common properties of the various add storage device messages.",
+      "title": "The StorageDevice message"
+    },
+    "inventory.v1beta1.UpdateDMOPResponse": {
+      "type": "object",
+      "properties": {
+        "dmop": {
+          "$ref": "#/definitions/inventory.v1beta1.DMOP",
+          "title": "DMOP object"
+        }
+      }
+    },
+    "inventory.v1beta1.UpdateStorageDeviceRequest": {
+      "type": "object",
+      "properties": {
+        "serial_number": {
+          "type": "string"
+        }
+      },
+      "description": "The input parameter to update a StorageDevice."
+    },
+    "inventory.v1beta1.UpdateStorageDeviceResponse": {
+      "type": "object",
+      "properties": {
+        "workflow_run_id": {
+          "type": "string"
+        }
+      },
+      "title": "The response from the update storage device call"
+    }
+  }
+}
