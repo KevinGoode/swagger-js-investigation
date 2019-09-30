@@ -11,4 +11,7 @@ npm run build
 # To validate a json object  
 npm run validate  
 
+NOTE:  
+By default validation fails because the json object being validated should have  
+a valid status. Change status to be  "DEVICE_STATUS_DEVICE_AVAILABLE" to fix.  
 
